@@ -10,27 +10,32 @@ export function Header() {
 
   const navItems = [
     { label: 'Overview', path: '/' },
-    { label: 'Campaigns', path: '/campaigns' },
-    { label: 'Create Campaign', path: '/campaigns/new' },
+    { label: 'Insertion Orders', path: '/campaigns' },
+    { label: 'Issue Order', path: '/campaigns/new' },
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full h-16 bg-[#050608]/90 backdrop-blur-2xl border-b border-white/[0.08] select-none">
-      <div className="max-w-[1400px] mx-auto h-full px-4 sm:px-6 flex items-center justify-between">
+    <header className="sticky top-0 z-40 w-full h-16 bg-[#0a0d14]/90 backdrop-blur-2xl border-b border-white/[0.08] select-none">
+      <div className="max-w-[1360px] mx-auto h-full px-4 sm:px-6 flex items-center justify-between">
         
-        {/* Left: Brand Identity */}
+        {/* Left: Brand Identity with Editorial Gravitas */}
         <div className="flex items-center space-x-8">
           <Link
             to="/"
             onClick={() => haptics.click()}
-            className="flex items-center space-x-2.5 text-inherit no-underline group"
+            className="flex items-center space-x-3 text-inherit no-underline group"
           >
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-b from-[#1a1f2c] to-[#0c0e14] border border-white/[0.1] group-hover:border-[#f59e0b]/60 flex items-center justify-center text-[#f59e0b] transition-colors shadow-[0_0_15px_rgba(245,158,11,0.2)]">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-b from-[#182030] to-[#0d121c] border border-white/[0.12] group-hover:border-[#d4a359]/60 flex items-center justify-center text-[#d4a359] transition-colors shadow-sm">
               <ShieldCheck className="w-4 h-4 stroke-[2.2]" />
             </div>
-            <span className="font-sans font-bold tracking-tight text-base text-white group-hover:text-[#f59e0b] transition-colors">
-              AdAssure
-            </span>
+            <div className="flex flex-col">
+              <span className="font-serif text-xl tracking-tight text-white group-hover:text-[#d4a359] transition-colors leading-none">
+                AdAssure
+              </span>
+              <span className="font-mono text-[9px] text-[#9499a8] tracking-wider uppercase mt-0.5">
+                Editorial Escrow Desk
+              </span>
+            </div>
           </Link>
 
           {/* 3 Main Navigation Tabs */}
@@ -45,9 +50,9 @@ export function Header() {
                   key={item.path}
                   to={item.path}
                   onClick={() => haptics.tick()}
-                  className={`px-4 py-1.5 rounded-lg transition-all ${
+                  className={`px-3.5 py-1.5 rounded-lg transition-all ${
                     isActive
-                      ? 'bg-[#f59e0b] text-[#050608] font-semibold shadow-sm'
+                      ? 'bg-[#d4a359] text-[#07090e] font-semibold shadow-xs'
                       : 'text-[#9499a8] hover:text-white hover:bg-white/[0.03]'
                   }`}
                 >
@@ -70,7 +75,7 @@ export function Header() {
             >
               <span className="w-2 h-2 rounded-full bg-[#10b981]" />
               <span>{address.slice(0, 6)}...{address.slice(-4)}</span>
-              <span className="text-[#f59e0b] font-semibold hidden md:inline">({balance})</span>
+              <span className="text-[#d4a359] font-semibold hidden md:inline">({balance})</span>
             </button>
           ) : (
             <button
@@ -78,7 +83,7 @@ export function Header() {
                 haptics.click();
                 setShowModal(true);
               }}
-              className="inline-flex items-center space-x-2 px-4 py-2 rounded-xl bg-[#f59e0b] hover:bg-[#d97706] text-[#050608] font-sans text-xs font-semibold tracking-tight shadow-[0_0_20px_rgba(245,158,11,0.35)] transition-all"
+              className="inline-flex items-center space-x-2 px-4 py-2 rounded-xl bg-[#d4a359] hover:bg-[#b38238] text-[#07090e] font-sans text-xs font-semibold tracking-tight shadow-[0_0_20px_rgba(212,163,89,0.3)] transition-all"
             >
               <Wallet className="w-3.5 h-3.5" />
               <span>Connect Wallet</span>

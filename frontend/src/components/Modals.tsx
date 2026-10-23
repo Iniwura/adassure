@@ -34,7 +34,7 @@ export function TransactionBanner({
               ) : isFailed ? (
                 <XCircle className="w-4 h-4 text-[#ef4444]" />
               ) : (
-                <Activity className="w-4 h-4 animate-spin text-[#f59e0b]" />
+                <Activity className="w-4 h-4 animate-spin text-[#d4a359]" />
               )}
             </div>
             <div>
@@ -51,7 +51,7 @@ export function TransactionBanner({
                     href={`https://studio.genlayer.com/transactions/${current.txHash}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-[#f59e0b] hover:underline inline-flex items-center"
+                    className="text-[#d4a359] hover:underline inline-flex items-center"
                   >
                     <ExternalLink className="w-3 h-3 ml-0.5" />
                   </a>

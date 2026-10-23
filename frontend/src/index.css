@@ -1,31 +1,23 @@
-/* Hallmark · theme: dusk · anti-slop: verified · Floor: 0 FAIL */
-@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&family=Geist:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
-
+/* Hallmark · theme: specimen · shape: split-studio · Floor: 0 FAIL */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --void: #050608;
-  --surface-0: #0a0c10;
-  --surface-1: #0f1117;
-  --surface-2: #141720;
-  --surface-3: #1a1e2a;
+  --ink-950: #07090e;
+  --ink-900: #0a0d14;
+  --ink-850: #0e121b;
+  --ink-800: #141925;
+  --ink-700: #1e2536;
 
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-bright: rgba(255, 255, 255, 0.16);
-  --border-amber: rgba(245, 158, 11, 0.4);
+  --rule: rgba(255, 255, 255, 0.08);
+  --rule-bright: rgba(255, 255, 255, 0.16);
+  --brass: #d4a359;
+  --verified: #10b981;
 
-  --ink-snow: #f7f8fa;
+  --ink-snow: #f4f6fa;
   --ink-slate: #9499a8;
   --ink-muted: #5e6475;
-
-  --signal-amber: #f59e0b;
-  --signal-amber-glow: rgba(245, 158, 11, 0.3);
-  --signal-emerald: #10b981;
-
-  --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'Geist Mono', 'JetBrains Mono', monospace;
 }
 
 * {
@@ -33,9 +25,9 @@
 }
 
 html {
-  background-color: var(--void);
+  background-color: var(--ink-900);
   color: var(--ink-snow);
-  font-family: var(--font-sans);
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -44,7 +36,7 @@ html {
 }
 
 body {
-  background-color: var(--void);
+  background-color: var(--ink-900);
   color: var(--ink-snow);
   margin: 0;
   padding: 0;
@@ -53,7 +45,7 @@ body {
 
 /* Accessible focus visible (Hallmark Floor 6) */
 :focus-visible {
-  outline: 2px solid var(--signal-amber);
+  outline: 2px solid var(--brass);
   outline-offset: 2px;
 }
 
@@ -67,60 +59,21 @@ body {
   }
 }
 
-/* Subtle Grid Background with Radial Mask */
-.framer-bg-grid {
-  position: absolute;
-  inset: 0;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 32px 32px;
-  mask-image: radial-gradient(ellipse at 50% 15%, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.25) 50%, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse at 50% 15%, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.25) 50%, transparent 80%);
-  pointer-events: none;
-  z-index: 0;
+/* Editorial Specimen Paper & Hairlines */
+.editorial-paper {
+  background: linear-gradient(180deg, #10141f 0%, #0c0f17 100%);
+  border: 1px solid var(--rule);
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.7);
 }
 
-/* Ambient Glow Behind Hero */
-.framer-ambient-glow {
-  position: absolute;
-  top: -180px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1200px;
-  height: 620px;
-  background: 
-    radial-gradient(circle at 50% 40%, rgba(245, 158, 11, 0.12) 0%, transparent 55%),
-    radial-gradient(ellipse at 50% 30%, rgba(16, 185, 129, 0.06) 0%, transparent 70%);
-  filter: blur(40px);
-  pointer-events: none;
-  z-index: 0;
+.editorial-rule-b {
+  border-bottom: 1px solid var(--rule);
 }
 
-/* Dynamic Glass Card */
-.framer-glass-card {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%), #0c0e14;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.14),
-    0 24px 60px -15px rgba(0, 0, 0, 0.85);
-  position: relative;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+.editorial-rule-t {
+  border-top: 1px solid var(--rule);
 }
 
-.framer-glass-card:hover {
-  border-color: rgba(245, 158, 11, 0.3);
-  transform: translateY(-2px);
-}
-
-/* Procedural Film Grain Overlay */
-.film-grain {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 999;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+.editorial-rule-r {
+  border-right: 1px solid var(--rule);
 }

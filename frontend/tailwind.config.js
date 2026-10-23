@@ -7,32 +7,29 @@ export default {
   theme: {
     extend: {
       colors: {
-        agency: {
-          bg: '#f3efe8',
-          card: '#ffffff',
-          surface: '#e9e4db',
-          dark: '#0a0a0a',
-          darkCard: '#171717',
-          border: '#d4d4d4',
-          borderLight: '#e5e0d8',
-          text: '#0a0a0a',
-          muted: '#525252',
-          subtle: '#737373',
-          coral: '#ff4c39',
-          coralHover: '#d4300e',
-          emerald: '#10b981',
-          emeraldLight: '#ecfdf5',
+        ink: {
+          950: '#07090e',
+          900: '#0a0d14',
+          850: '#0e121b',
+          800: '#141925',
+          700: '#1e2536',
+        },
+        brass: {
+          DEFAULT: '#d4a359',
+          light: '#e2ba77',
+          dark: '#b38238',
+        },
+        verified: {
+          DEFAULT: '#10b981',
+          light: '#34d399',
+          glow: 'rgba(16, 185, 129, 0.15)',
         }
       },
       fontFamily: {
-        serif: ['Newsreader', 'Georgia', 'serif'],
-        sans: ['Plus Jakarta Sans', 'Inter', '-apple-system', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+        sans: ['"Plus Jakarta Sans"', '-apple-system', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
       },
-      boxShadow: {
-        'agency': '0 4px 20px -2px rgba(10, 10, 10, 0.05), 0 2px 6px -1px rgba(10, 10, 10, 0.03)',
-        'agency-float': '0 20px 40px -8px rgba(10, 10, 10, 0.12)',
-      }
     },
   },
   plugins: [],

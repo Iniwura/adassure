@@ -37,11 +37,11 @@ export function WalletModal() {
         {/* Header */}
         <div className="flex items-center justify-between pb-4 border-b border-white/[0.08]">
           <div className="flex items-center space-x-2.5">
-            <div className="w-8 h-8 rounded-lg bg-[#f59e0b]/15 border border-[#f59e0b]/30 flex items-center justify-center text-[#f59e0b]">
+            <div className="w-8 h-8 rounded-lg bg-[#d4a359]/15 border border-[#d4a359]/30 flex items-center justify-center text-[#d4a359]">
               <Wallet className="w-4 h-4" />
             </div>
             <div>
-              <h3 className="font-sans font-bold text-base text-white">
+              <h3 className="font-serif font-normal text-lg text-white">
                 {isConnected ? 'Connected Wallet' : 'Connect Wallet'}
               </h3>
               <span className="text-[11px] font-mono text-[#9499a8]">GenLayer Studionet (Chain ID 61997)</span>
@@ -97,7 +97,7 @@ export function WalletModal() {
               {/* Balance */}
               <div className="flex items-center justify-between pt-1">
                 <span className="text-[#9499a8]">Available Balance:</span>
-                <span className="text-[#f59e0b] font-bold text-sm">{balance}</span>
+                <span className="text-[#d4a359] font-bold text-sm">{balance}</span>
               </div>
             </div>
 
@@ -118,14 +118,14 @@ export function WalletModal() {
             <button
               onClick={connectMetaMask}
               disabled={isConnecting}
-              className="w-full p-4 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] hover:border-[#f59e0b]/40 flex items-center justify-between transition-all group text-left"
+              className="w-full p-4 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] hover:border-[#d4a359]/40 flex items-center justify-between transition-all group text-left"
             >
               <div className="flex items-center space-x-3">
-                <div className="w-9 h-9 rounded-lg bg-[#f59e0b]/10 border border-[#f59e0b]/20 flex items-center justify-center text-[#f59e0b]">
+                <div className="w-9 h-9 rounded-lg bg-[#d4a359]/10 border border-[#d4a359]/20 flex items-center justify-center text-[#d4a359]">
                   <Wallet className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-white font-sans text-sm font-semibold group-hover:text-[#f59e0b] transition-colors">
+                  <div className="text-white font-sans text-sm font-semibold group-hover:text-[#d4a359] transition-colors">
                     MetaMask or Injected Wallet
                   </div>
                   <div className="text-[#9499a8] text-xs">
@@ -163,7 +163,7 @@ export function WalletModal() {
             </button>
 
             {isConnecting && (
-              <div className="text-center py-2 text-xs font-mono text-[#f59e0b] animate-pulse">
+              <div className="text-center py-2 text-xs font-mono text-[#d4a359] animate-pulse">
                 Requesting signature / connection...
               </div>
             )}
